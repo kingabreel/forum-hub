@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import one.alura.forumhub_one.domain.model.user.User;
 import one.alura.forumhub_one.domain.dto.user.UserData;
 import one.alura.forumhub_one.domain.dto.token.JwtData;
-import one.alura.forumhub_one.service.TokenService;
+import one.alura.forumhub_one.infra.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +27,7 @@ public class AuthController {
     @PostMapping
     public ResponseEntity login(@RequestBody @Valid UserData data){
         var token = new UsernamePasswordAuthenticationToken(data.login(), data.password());
+        System.out.println(data.login() + " + " + data.password());
 
         var authentication = manager.authenticate(token);
 

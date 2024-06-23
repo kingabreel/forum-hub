@@ -1,4 +1,4 @@
-package one.alura.forumhub_one.service;
+package one.alura.forumhub_one.infra.service;
 
 import one.alura.forumhub_one.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

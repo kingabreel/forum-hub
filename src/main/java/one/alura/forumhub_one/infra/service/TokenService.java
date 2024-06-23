@@ -1,4 +1,4 @@
-package one.alura.forumhub_one.service;
+package one.alura.forumhub_one.infra.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -34,7 +34,7 @@ public class TokenService {
         try {
             var algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("API Voll.med")
+                    .withIssuer("API forum")
                     .build()
                     .verify(tokenJwt)
                     .getSubject();
