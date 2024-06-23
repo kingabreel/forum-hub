@@ -14,25 +14,25 @@ import java.time.LocalDateTime;
 public class Topic{
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long id;
+        private Long id;
 
-        @Column(nullable = false, length = 250)
-        String title;
+        @Column(name = "titulo", nullable = false, length = 250)
+        private String title;
 
-        @Column(nullable = false, length = 350)
-        String message;
+        @Column(name = "mensagem", nullable = false, length = 350)
+        private String message;
 
         @Column(name = "data_criacao", nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-        LocalDateTime creationDate;
+        private LocalDateTime creationDate;
 
         @Column(name = "estado_topico", nullable = false, columnDefinition = "ENUM('ativo', 'inativo', 'fechado')")
-        String topicState;
+        private String topicState;
 
         @Column(nullable = false, length = 100)
-        String autor;
+        private String autor;
 
-        @Column(nullable = false, length = 100)
-        String course;
+        @Column(name = "curso", nullable = false, length = 100)
+        private String course;
 
     public Topic(Topic data) {
         this.title = data.getTitle();
