@@ -26,6 +26,9 @@ public class SecurityConfiguration {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "/login", "/usuarios").permitAll()
+                .requestMatchers(HttpMethod.GET, "/topicos", "/topicos/{id}").permitAll()
+                .requestMatchers(HttpMethod.PUT, "/topicos/{id}").authenticated()
+                .requestMatchers(HttpMethod.POST, "/topicos").authenticated()
                 .anyRequest().authenticated()
                 .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
