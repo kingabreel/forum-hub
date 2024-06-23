@@ -22,16 +22,18 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().authorizeHttpRequests()
-                .requestMatchers(HttpMethod.POST, "/login", "/usuarios").permitAll()
-                .requestMatchers(HttpMethod.GET, "/topicos", "/topicos/{id}").permitAll()
-                .requestMatchers(HttpMethod.PUT, "/topicos/{id}").authenticated()
-                .requestMatchers(HttpMethod.POST, "/topicos").authenticated()
-                .anyRequest().authenticated()
-                .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
+        http
+                .csrf(csrf -> csrf.disable())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.POST, "/login", "/usuarios").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/topicos", "/topicos/{id}").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/topicos/{id}").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/topicos").authenticated()
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
     }
 
     @Bean
