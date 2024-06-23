@@ -1,4 +1,4 @@
-package one.alura.forumhub_one.domain.model;
+package one.alura.forumhub_one.domain.dto.topic;
 
 import jakarta.validation.constraints.NotNull;
 

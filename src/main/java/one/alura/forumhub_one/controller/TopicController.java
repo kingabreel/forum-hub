@@ -2,10 +2,10 @@ package one.alura.forumhub_one.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import one.alura.forumhub_one.domain.model.Topic;
-import one.alura.forumhub_one.domain.model.TopicData;
-import one.alura.forumhub_one.domain.model.TopicDataList;
-import one.alura.forumhub_one.domain.model.UpdateTopicData;
+import one.alura.forumhub_one.domain.model.topic.Topic;
+import one.alura.forumhub_one.domain.dto.topic.TopicData;
+import one.alura.forumhub_one.domain.dto.topic.TopicDataList;
+import one.alura.forumhub_one.domain.dto.topic.UpdateTopicData;
 import one.alura.forumhub_one.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

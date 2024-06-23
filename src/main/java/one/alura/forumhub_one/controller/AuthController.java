@@ -1,10 +1,10 @@
 package one.alura.forumhub_one.controller;
 
 import jakarta.validation.Valid;
-import one.alura.forumhub_one.domain.model.User;
-import one.alura.forumhub_one.domain.model.UserData;
-import one.alura.forumhub_one.infra.security.JwtData;
-import one.alura.forumhub_one.infra.security.TokenService;
+import one.alura.forumhub_one.domain.model.user.User;
+import one.alura.forumhub_one.domain.dto.user.UserData;
+import one.alura.forumhub_one.domain.dto.token.JwtData;
+import one.alura.forumhub_one.service.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

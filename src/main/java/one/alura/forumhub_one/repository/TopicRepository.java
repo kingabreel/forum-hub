@@ -1,6 +1,6 @@
 package one.alura.forumhub_one.repository;
 
-import one.alura.forumhub_one.domain.model.Topic;
+import one.alura.forumhub_one.domain.model.topic.Topic;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
